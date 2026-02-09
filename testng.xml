@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
 <suite name="All Test Suite">
-    <test verbose="2" preserve-order="true" name="C:/Users/aadit/IdeaProjects/dummyTest_03/testng.xml">
-        <classes/>
+    <test name="Login Tests">
+        <classes>
+            <class name="org.example.LoginTest">
+                <methods>
+                    <include name="launchDriver"/>
+                    <include name="navigate"/>
+                    <include name="quitDriver"/>
+                </methods>
+            </class>
+        </classes>
     </test>
 </suite>
