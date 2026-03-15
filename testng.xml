@@ -7,6 +7,7 @@
             <class name="org.example.LoginTest">
                 <methods>
                     <include name="launchDriver"/>
+                    <include name="screenshot"/>
                     <include name="navigate"/>
                     <include name="quitDriver"/>
                 </methods>
