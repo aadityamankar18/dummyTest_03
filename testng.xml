@@ -9,6 +9,7 @@
                     <include name="launchDriver"/>
                     <include name="screenshot"/>
                     <include name="navigate"/>
+                    <include name="dummy"/>
                     <include name="quitDriver"/>
                 </methods>
             </class>

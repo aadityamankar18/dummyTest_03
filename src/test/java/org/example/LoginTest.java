@@ -1,9 +1,8 @@
 package org.example;
 import org.apache.commons.io.FileUtils;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.Test;
 import java.io.File;
 import java.io.IOException;
@@ -30,7 +29,7 @@ public class LoginTest {
         test = extent.createTest("Launch Driver Test");
         test.log(Status.INFO, "Initializing Extent Reports");
 
-        System.setProperty("webdriver.chrome.driver",   "C:\\Users\\aadit\\OneDrive\\Documents\\chromedriver-win64\\chromedriver-win64\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver",   "C:\\JAR Files\\chromedriver-win64\\chromedriver-win64\\chromedriver.exe");
         test.log(Status.INFO, "Setting ChromeDriver property");
 
         driver = new ChromeDriver();   // 👈 initialize here
@@ -85,6 +84,33 @@ public class LoginTest {
     }
 
     @Test (priority = 4)
+    public void dummy() {
+        test = extent.createTest("dummy Test");
+        test.log(Status.INFO, "Starting dummy test");
+
+        driver.navigate().to("https://www.google.com/");
+        test.log(Status.INFO, "Navigated to Google URL");
+
+        driver.navigate().refresh();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        test.log(Status.INFO, "Page refreshed and implicit wait set");
+
+        Actions act = new Actions(driver);
+        WebElement searchBox = driver.findElement(By.xpath("//textarea[@id='APjFqb']"));
+        searchBox.sendKeys(Keys.SHIFT, "aaditya");
+        searchBox.sendKeys(Keys.ENTER);
+        test.log(Status.INFO, "Entered text in search box");
+
+        System.out.println("The google page ID is: " + driver.getWindowHandles());
+        test.log(Status.INFO, "Google Page ID copied.");
+
+        System.out.println("Test 4 title is: " + driver.getTitle());
+        test.log(Status.INFO, "Page title: " + driver.getTitle());
+
+        test.log(Status.PASS, "Dummy Test passed");
+    }
+
+    @Test (priority = 4)
     public void quitDriver() {
         test = extent.createTest("Quit Driver Test");
         test.log(Status.INFO, "Starting quit driver test");
@@ -92,7 +118,7 @@ public class LoginTest {
         driver.quit();
         test.log(Status.INFO, "Driver closed");
 
-        System.out.println("Test 4: Driver Closed");
+        System.out.println("Test 5: Driver Closed");
         test.log(Status.PASS, "Quit Driver Test passed");
 
         // Flush the report
