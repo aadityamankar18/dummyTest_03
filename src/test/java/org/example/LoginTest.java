@@ -110,7 +110,7 @@ public class LoginTest {
         test.log(Status.PASS, "Dummy Test passed");
     }
 
-    @Test (priority = 4)
+    @Test (priority = 5)
     public void quitDriver() {
         test = extent.createTest("Quit Driver Test");
         test.log(Status.INFO, "Starting quit driver test");
