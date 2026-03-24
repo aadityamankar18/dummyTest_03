@@ -7,6 +7,9 @@
             <class name="org.example.LoginTest">
                 <methods>
                     <include name="launchDriver"/>
+                    <include name="openFirstLink"/>
+                    <include name="actionClass"/>
+                    <include name="selectClass"/>
                     <include name="screenshot"/>
                     <include name="navigate"/>
                     <include name="dummy"/>
